@@ -14,7 +14,7 @@ public class Alumno {
         asignaturas = new String[maximo];
     }
 
-    public Alumno(String nombre, String matricula, int calificacion) {
+    public Alumno(String nombre, String matricula, double calificacion) {
         this.nombre = nombre;
         this.matricula = matricula;
         this.calificacion = calificacion;
