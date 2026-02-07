@@ -28,23 +28,29 @@ public class Alumno {
     public void setCalificacion(double calificacion) {this.calificacion = calificacion; }
 
     public void matricularAsignatura(String asignatura){
-        asignaturas[numAsignaturas] = asignatura;
+        this.asignaturas[numAsignaturas] = asignatura;
+        numAsignaturas++;
     }
 
     public int getNumAsignaturas() {return numAsignaturas;}
     public void mostrarAsignaturas(){
         if (numAsignaturas != 0) {
-            System.out.println(numAsignaturas + " asignaturas: ");
+            if(numAsignaturas == 1){
+                System.out.println(numAsignaturas + " asignatura: ");
+            }else {
+                System.out.println(numAsignaturas + " asignaturas: ");
+            }
             for (int i = 0; i < numAsignaturas; i++) {
                 System.out.println("\t- " + asignaturas[i] + ".");
             }
         }else{
             System.out.println("No está matriculado en ninguna asignatura");
         }
+        System.out.println();
     }
 
     public void mostrarAlumno(){
-        System.out.println(nombre + ". Matrícula: "+matricula+ "("+calificacion+")");
+        System.out.println(nombre + ". Matrícula: "+matricula+ " ("+calificacion+")");
         this.mostrarAsignaturas();
     }
 }
